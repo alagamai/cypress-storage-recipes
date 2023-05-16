@@ -1,17 +1,23 @@
 {
-  "name": "cypress-localstorage",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@faker-js/faker": "^8.0.1",
-    "cypress": "^12.10.0",
-    "cypress-localstorage-commands": "^2.2.3"
-  }
+	"name": "cypress-localstorage",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"cy:session-test1": "npx cypress run --spec cypress/e2e/examples/session-restore-test1.js",
+		"cy:session-test2": "npx cypress run --spec cypress/e2e/examples/session-restore-test2.js",
+		"cy:before-load": "npx cypress run --spec cypress/e2e/examples/beforeLoad.js",
+		"cy:cookies-test1": "npx cypress run --spec cypress/e2e/examples/Cookies-store-restore.js",
+		"cy:cookies-test2": "npx cypress run  --spec cypress/e2e/examples/cookies-get.js",
+		"cy:get-local-storage": "npx cypress run --spec cypress/e2e/examples/get-local-storage-test.js",
+		"cy:save-restore-local-storage": "npx cypress run --spec cypress/e2e/examples/local-storage-save-restore.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@faker-js/faker": "^8.0.1",
+		"cypress": "^12.10.0",
+		"cypress-localstorage-commands": "^2.2.3"
+	}
 }

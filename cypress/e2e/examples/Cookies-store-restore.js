@@ -5,9 +5,6 @@ let token;
 describe('template spec', () => {
 	before(() => {
 		cy.demoblazelogin();
-		// cy.getCookies().then((cookies) => {
-		//   token =  cookies[1].value
-		// })
 		cy.getCookiesUsingGetSet().then(tok_val => {
 			token = tok_val;
 			// cy.log(cookies[0].value);

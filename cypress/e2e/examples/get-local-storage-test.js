@@ -1,27 +1,9 @@
 /// <reference types="cypress-localstorage-commands" />
 
 describe('local storage test', () => {
-	before(() => {
-		// cy.setLocalStorage('username', 'demouser')
-		// cy.setLocalStorage('password', 'testingisfun99')
-		// cy.saveLocalStorage().then(getall => {
-		//     cy.log(getall)
-		// })
-	});
-
-	beforeEach(() => {
-		// cy.restoreLocalStorage();
-	});
-
-	afterEach(() => {
-		// cy.saveLocalStorage()
-	});
-
 	it.only('access local storage', () => {
 		cy.visit('http://autopract.com/');
 		cy.get('[type="button"].close').click();
-
-		// cy.setLocalStorage("myName", "Tester")
 
 		cy.window().then(win => {
 			cy.log('Num of items in local storage ' + win.localStorage.length);

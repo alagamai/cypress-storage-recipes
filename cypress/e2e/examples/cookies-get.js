@@ -1,10 +1,9 @@
 /// <reference types="cypress" />
 
-//https://reflect.run/articles/how-to-save-and-restore-state-in-cypress-tests/
-
 describe('session test', () => {
 	beforeEach(() => {
 		cy.visit('cypress/html/storage.html');
+		Cypress.Cookies.debug(true);
 	});
 
 	it('tests that the cookie is set', () => {
@@ -36,14 +35,14 @@ describe('session test', () => {
 
 		cy.getCookie('key1').should('have.property', 'value', 'value1');
 
-		Cypress.Cookies.preserveOnce('key1');
+		//Cypress.Cookies.preserveOnce('key1');
 	});
 
-	it('tests that the cookie was preserved', () => {
-		cy.getCookie('key1').should('have.property', 'value', 'value1');
-	});
+	// it('tests that the cookie was preserved', () => {
+	// 	cy.getCookie('key1').should('have.property', 'value', 'value1');
+	// });
 
-	it('tests that the cookie was preserved only once', () => {
+	it('tests that the cookie was not preserved across test', () => {
 		cy.getCookies().should('be.empty');
 	});
 });
