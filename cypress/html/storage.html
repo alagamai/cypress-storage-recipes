@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>State demo</title>
+  </head>
+
+  <body>
+    <button type="button" data-cy="cookie-trigger">Set cookie</button>
+    <script>
+        document.querySelector("[data-cy=cookie-trigger]").addEventListener("click", () => {
+  document.cookie = "key1=value1; expires=Wed, 18 Dec 2024 12:00:00 UTC";
+});
+    </script>
+    <button type="button" data-cy="cookie-def-set">Set default cookie</button>
+
+    <button type="button" data-cy="cookie-modify">Modify default cookie</button>
+
+    <button type="button" data-cy="set-ls">Set local storage</button>
+    <script>
+          document.querySelector("[data-cy=set-ls]").addEventListener("click", () => {
+    localStorage.setItem("key1", "blue");
+    localStorage.setItem("key2", "red");
+  });
+    </script>
+    <button type="button" data-cy="set-ss">Set session storage</button>
+    <script src="script.js"></script>
+  </body>
+</html>
